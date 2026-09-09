@@ -12,7 +12,7 @@ jobs:
         with:
           distribution: temurin
           java-version: '17'
-      - name: Build
+      - name: Build APK
         run: |
           npm install
           npm run build
@@ -20,9 +20,7 @@ jobs:
           npx cap sync android
           cd android
           chmod +x gradlew
-                   cd android
-          chmod +x gradlew
-          ./gradlew assembleDebug
+         . /gradlew assembleDebug
       - name: Subir APK
         uses: actions/upload-artifact@v4
         with:
