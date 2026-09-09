@@ -20,7 +20,9 @@ jobs:
           npx cap sync android
           cd android
           chmod +x gradlew
-         ./gradlew assembleDebug
+                   cd android
+          chmod +x gradlew
+          ./gradlew assembleDebug
       - name: Subir APK
         uses: actions/upload-artifact@v4
         with:
